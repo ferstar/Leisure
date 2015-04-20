@@ -2,7 +2,7 @@
     <div id="sidebar">
         <div class="widget center">
             <i class="logo"></i>
-            <span class="name">banri</span>
+            <span class="name">ferstar</span>
         </div>
         <div class="social">
             <div class="center">
