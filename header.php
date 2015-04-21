@@ -24,10 +24,10 @@
     <?php $this->header(); ?>
 </head>
 <body>
-    <div id="main">
+    <div class="main">
         <header id="header">
             <div class="wrapper">
-                <nav class="nav-menu" role="navigation">
+                <nav id="nav" role="navigation">
                     <a<?php if($this->is('index')): ?> class="current"<?php endif; ?> href="<?php $this->options->siteUrl(); ?>">
                         <?php _e('首页'); ?>
                     </a>
@@ -48,5 +48,11 @@
                         </a>
                     <?php endwhile; ?>
                 </nav>
+            </div>
+
+            <div id="toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </header>

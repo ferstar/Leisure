@@ -1,5 +1,5 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-    <div id="sidebar">
+    <div class="sidebar">
         <div class="widget center">
             <i class="logo"></i>
             <span class="name">ferstar</span>
@@ -29,10 +29,12 @@
         </div>
         <div class="widget">
             <form class="search" method="post" action="/" role="search">
-                <input type="search" name="s" value="搜索" onfocus="if (value =='搜索'){value =''}" onblur="if (value ==''){value='搜索'}" autocomplete="off" />
+                <input type="search" name="s" value="搜索" autocomplete="off" />
             </form>
         </div>
     </div>
-    <?php $this->footer(); ?>
+
+<script src="<?php $this->options->themeUrl('common.js'); ?>"></script>
+<?php $this->footer(); ?>
 </body>
 </html>
