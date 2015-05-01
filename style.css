@@ -2,7 +2,7 @@
 /**
  * @theme:   leisure
  * @author:  banri
- * @update:  20150420
+ * @update:  20150421
  */
 
 /* --------------------------------------------------------------------------
@@ -74,7 +74,7 @@ a:active {
     margin: 0 auto;
 }
 
-#toggle {
+.title {
     display: none;
 }
 
@@ -163,22 +163,34 @@ a:active {
     background: #ccc;
 }
 
-.post-content p > code {
-    margin: 0 .25rem;
-}
-
-.post-content p > code,
-.post-content pre {
+.post-content pre,
+.post-content code {
     line-height: 1.25rem;
 
     padding: .25rem;
 
-    word-wrap: normal;
+    word-break: keep-all;
 
     color: #c7254e;
     border: 1px solid #eaeaea;
     border-radius: .25rem;
     background: #f8f8f8;
+}
+
+.post-content code {
+    margin: 0 .25rem;
+}
+
+.post-content pre code {
+    margin: 0;
+    padding: 0;
+
+    border: 0 none;
+}
+
+.post-content pre,
+.post-content pre code {
+    word-wrap: normal;
 }
 
 .post-content img {
@@ -652,9 +664,28 @@ a:active {
         max-width: 100%;
     }
 
-    #toggle {
+    .title {
+        font-size: 1.2rem;
+
         position: relative;
-        z-index: 10000;
+        top: 0;
+        left: 0;
+
+        display: block;
+        float: left;
+
+        width: 100%;
+        height: 50px;
+        margin: 0;
+
+        text-align: center;
+
+        color: #333;
+        box-shadow: 0 1px 1px #eee;
+    }
+
+    #toggle {
+        position: absolute;
         top: 10px;
         right: 10px;
 
@@ -716,9 +747,13 @@ a:active {
         border-bottom: 0 none;
     }
 
+    .post-content p > code {
+        word-break: break-all;
+    }
+
     .container {
         margin: 0;
-        padding: 1.5rem 1rem .5rem;
+        padding: 50px 1rem .5rem;
     }
 
     .text {
