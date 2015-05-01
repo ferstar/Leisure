@@ -50,9 +50,12 @@
                 </nav>
             </div>
 
-            <div id="toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <h1 class="title">
+                <?php $this->options->title() ?>
+                <div id="toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </h1>
         </header>

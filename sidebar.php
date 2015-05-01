@@ -21,7 +21,7 @@
         <div class="widget">
             <h3 class="widget-title"><?php _e('最近回复'); ?></h3>
             <ul class="widget-list">
-            <?php $this->widget('Widget_Comments_Recent')->to($comments); ?>
+            <?php $this->widget('Widget_Comments_Recent','ignoreAuthor=true')->to($comments); ?>
             <?php while($comments->next()): ?>
                 <li><a href="<?php $comments->permalink(); ?>"><?php $comments->author(false); ?>: <?php $comments->excerpt(30, '...'); ?></a></li>
             <?php endwhile; ?>
@@ -29,7 +29,7 @@
         </div>
         <div class="widget">
             <form class="search" method="post" action="/" role="search">
-                <input type="search" name="s" value="搜索" autocomplete="off" />
+                <input type="search" name="s" value="搜索" autocomplete="off">
             </form>
         </div>
     </div>

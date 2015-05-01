@@ -1,27 +1,37 @@
 function sbar() {
-    var sbar = document.getElementsByName("s");
+    var sbar = document.getElementsByName('s');
 
     for (var i = 0; i < sbar.length; i++) {
-        sbar[i].addEventListener("focus", function() {
-            this.value = "";
+        sbar[i].addEventListener('focus', function() {
+            if (this.value == '\u641c\u7d22') {
+                this.value = '';
+            }
         }, false);
 
-        sbar[i].addEventListener("blur", function() {
-            this.value = "\u641c\u7d22";
+        sbar[i].addEventListener('blur', function() {
+            if (this.value == '') {
+                this.value = '\u641c\u7d22';
+            }
         }, false);
     }
 }
 
-function comment() {
-    var area = document.getElementById("textarea"),
-        sub = document.getElementById("submit");
+function key() {
+    var event = window.event || arguments.callee.caller.arguments[0],
+        sub = document.getElementById('submit');
 
-    if (area && sub) {
-        area.addEventListener("keydown", function() {
-            if ((event.metaKey && event.keyCode == 13) || (event.ctrlKey && event.keyCode == 13)) {
-                sub.click();
-                return false;
-            }
+    if ((event.metaKey && event.keyCode == 13) || (event.ctrlKey && event.keyCode == 13)) {
+        sub.click();
+        event.preventDefault();
+    }
+}
+
+function comment() {
+    var area = document.getElementById('textarea');
+
+    if (area) {
+        area.addEventListener('keydown', function() {
+            key();
         }, false);
     }
 }
@@ -30,7 +40,7 @@ function toggle(e) {
     var _arguments = arguments;
 
     (function(count) {
-        e.addEventListener("click", function() {
+        e.addEventListener('click', function() {
             count >= _arguments.length && (count = 1);
             _arguments[count++ % _arguments.length].call(e);
         }, false)
@@ -38,20 +48,21 @@ function toggle(e) {
 }
 
 function menu(e) {
-    var link = e.getElementsByTagName("a"),
+    var link = e.getElementsByTagName('a'),
         mh = link.length * 51;
-    e.style.height = mh + "px";
+
+    e.style.height = mh + 'px';
 }
 
 function show() {
-    var btn = document.getElementById("toggle"),
-        nav = document.getElementById("nav");
+    var btn = document.getElementById('toggle'),
+        nav = document.getElementById('nav');
 
     toggle(btn, function() {
-        btn.className += "show-btn";
+        btn.className = 'show-btn';
         menu(nav);
     }, function() {
-        btn.className = "";
+        btn.className = '';
         nav.style.height = 0;
     });
 }
