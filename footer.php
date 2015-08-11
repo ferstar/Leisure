@@ -4,7 +4,7 @@
     </footer>
     <div class="btm-search">
         <form class="search" method="post" action="/" role="search">
-            <input type="search" name="s" value="搜索" autocomplete="off">
+            <input type="search" name="s" autocomplete="off">
         </form>
     </div>
 </div>
