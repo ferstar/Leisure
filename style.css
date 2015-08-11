@@ -2,7 +2,7 @@
 /**
  * @theme:   leisure
  * @author:  banri
- * @update:  20150421
+ * @update:  20150504
  */
 
 /* --------------------------------------------------------------------------
@@ -15,11 +15,11 @@ html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}artic
    主题仍在施工中，如有BUG欢迎反馈。
    ========================================================================== */
 html {
-    font-size: 87.5%;
+    font-size: 14px;
 }
 
 body {
-    font-family: 'Source Sans Pro', 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
 
     color: #666;
     background: #eee;
@@ -165,7 +165,10 @@ a:active {
 
 .post-content pre,
 .post-content code {
+    font-family: 'Courier', 'monospace', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
     line-height: 1.25rem;
+
+    overflow-y: hidden;
 
     padding: .25rem;
 
@@ -191,6 +194,13 @@ a:active {
 .post-content pre,
 .post-content pre code {
     word-wrap: normal;
+}
+
+.post-content blockquote {
+    margin: 0;
+    padding: .5rem 1.5rem;
+
+    background: #f8f8f8;
 }
 
 .post-content img {
@@ -478,7 +488,7 @@ a:active {
 .comment-author:hover,
 .comment-author:hover a,
 .comment-author a:hover {
-    color: #fff!important;
+    color: #fff !important;
     background: #ccc;
 }
 
@@ -527,13 +537,7 @@ a:active {
 }
 
 .current a {
-    color: #fff!important;
-}
-
-.response {
-    font-size: 1.2rem;
-
-    margin: 2rem 0;
+    color: #fff !important;
 }
 
 .text,
@@ -555,7 +559,8 @@ a:active {
     border-color: #aaa;
 }
 
-.text {
+.text,
+#submit {
     width: 33%;
 }
 
@@ -571,8 +576,6 @@ a:active {
 }
 
 #submit {
-    width: 100%;
-
     color: #999;
     background: #eee;
 }
@@ -646,7 +649,14 @@ a:active {
        only screen and (min-resolution: 2dppx),
        only screen and (min-width: 1900px) {
     html {
-        font-size: 100%;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min--moz-device-pixel-ratio: 2) {
+    .logo {
+        background-image: url(//cdn.brdev.org/avatar.jpg!2x);
+        background-size: cover;
     }
 }
 
@@ -659,7 +669,8 @@ a:active {
 
     .main,
     .text,
-    .wrapper {
+    .wrapper,
+    #submit {
         width: 100%;
         max-width: 100%;
     }
